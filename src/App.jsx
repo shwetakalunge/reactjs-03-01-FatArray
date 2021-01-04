@@ -1,9 +1,25 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import Card from "./Cards";
+import Sdata from "./Sdata.jsx";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const App = () => (
+  <>
+    <h1 className="heading_style">List of Top 5 Series 2021</h1>
+    {Sdata.map((val, index) => {
+      return (
+        <Card
+          key={val.id}
+          imgsrc={val.imgscr}
+          title={val.title}
+          sname32={val.sname}
+          link={val.links}
+        />
+      );
+    })}
+  </>
+);
+
+export default App;
 
 // var a = [
 //   {
